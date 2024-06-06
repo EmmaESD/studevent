@@ -1,5 +1,6 @@
 <script setup>
 import { defineProps } from "vue";
+import { useRouter } from "vue-router";
 
 const props = defineProps({
   image_url: String,
@@ -9,6 +10,12 @@ const props = defineProps({
   date: Number,
   eventItemList: Array,
 });
+
+const router = useRouter();
+
+function goSingleEvent() {
+  router.push("/about");
+}
 </script>
 
 <template>
@@ -19,7 +26,7 @@ const props = defineProps({
       <h4>{{ item.content }}</h4>
       <h4>{{ item.author }}</h4>
       <h4>{{ item.date }}</h4>
-      <button>Plus d'infos</button>
+      <button @click="goSingleEvent">Plus d'infos</button>
     </li>
   </ul>
 </template>
