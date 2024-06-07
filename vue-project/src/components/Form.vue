@@ -31,6 +31,7 @@ const props = defineProps({
   content: String,
   author: String,
   date: String,
+  id: Number,
 });
 </script>
 
@@ -41,8 +42,13 @@ const props = defineProps({
         <input type="text" v-model="events.title" placeholder="Title" />
         <input type="text" v-model="events.author" placeholder="Author" />
       </div>
-      <div class="form-row">
-        <input type="date" v-model="events.date" placeholder="Date" />
+      <div class="form-2">
+        <input
+          classe="date"
+          type="date"
+          v-model="events.date"
+          placeholder="Date"
+        />
         <input type="text" v-model="events.image_url" placeholder="Image URL" />
       </div>
       <textarea
@@ -56,4 +62,36 @@ const props = defineProps({
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.form-column {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.form-2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+}
+
+textarea {
+  width: 100%;
+}
+</style>

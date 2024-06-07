@@ -2,10 +2,11 @@ import { createApp } from "vue";
 import { createMemoryHistory, createRouter } from "vue-router";
 import SingleEvent from "./views/SingleEvent.vue";
 import App from "./App.vue";
+import EventItemList from "./components/EventItemList.vue";
 
 const routes = [
-  { path: "/App", component: App },
-  { path: "/SingleEvent", component: SingleEvent },
+  { path: "/", component: EventItemList },
+  { path: "/event/:id", component: SingleEvent },
 ];
 
 const router = createRouter({
